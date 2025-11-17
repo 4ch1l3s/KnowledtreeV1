@@ -1,6 +1,10 @@
 @echo off
 REM --------- Tạo thư mục OCR nếu chưa có ---------
-SET OCR_DIR=%~dp0ocr2
+SET OCR_DIR=%~dp0OCR
+SET REPO_DIR=%OCR_DIR%\License-Plate-Recognition
+SET REQ_FILE=%REPO_DIR%\requirement.txt
+
+
 
 IF NOT EXIST "%OCR_DIR%" (
     mkdir "%OCR_DIR%"
@@ -36,12 +40,16 @@ REM --------- Tạo virtual environment Python 3.10 trong .venv ---------
 REM Kiểm tra Python 3.10
 py -3.10 -m venv .venv
 
+
+
 REM --------- Kích hoạt virtual environment ---------
 call .venv\Scripts\activate.bat
 
 echo Da tao va kich hoat .venv voi Python 3.10
 
 REM --------- Ghi nội dung mới vào requirements.txt ---------
+
+
 (
 echo asttokens==3.0.1
 echo certifi==2025.11.12
@@ -98,5 +106,30 @@ echo wcwidth==0.2.14
 ) > "%REQ_FILE%"
 
 echo Da sua xong file requirements.txt
+
+REM --------- Cập nhật pip và cài tất cả gói từ requirements.txt ---------
+pip install --upgrade pip
+pip install -r requirement.txt --no-deps
+
+REM --------- Cài riêng PyTorch ---------
+REM Chọn 1 trong 2 lệnh sau:
+
+REM --- Nếu dùng GPU (CUDA 11.7) ---
+pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1+cu117 -f https://download.pytorch.org/whl/cu117/torch_stable.html
+
+
+REM Cài OpenCV (cv2)
+pip install opencv-python
+
+REM --------- Cập nhật pip ---------
+python -m pip install --upgrade pip
+
+REM --------- Cài numpy (hoặc cài lại để chắc chắn) ---------
+pip install --upgrade numpy
+
+REM --------- ha phien ban ) ---------
+pip install numpy==1.25.2 --force-reinstall
+
+echo Da cai dat xong tat ca package
 
 pause
