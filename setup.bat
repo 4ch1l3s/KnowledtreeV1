@@ -124,6 +124,10 @@ pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1+cu1
 REM Cài OpenCV (cv2)
 pip install opencv-python
 
+REM Cai python
+pip install ipython
+
+
 REM --------- Cập nhật pip ---------
 python -m pip install --upgrade pip
 
@@ -140,6 +144,32 @@ REM Xoá thư mục .git trong thư mục hiện tại
 rmdir /s /q .git
 
 echo Đã xoá thư mục .git
-pause
+
+
+@echo off
+setlocal enabledelayedexpansion
+
+set "file=webcam.py"
+set "old=vid = cv2.VideoCapture(1)"
+set "new=vid = cv2.VideoCapture(0)"
+
+if not exist "%file%" (
+    echo Khong tim thay file %file%
+    pause
+    exit /b
+)
+
+(for /f "usebackq delims=" %%a in ("%file%") do (
+    set "line=%%a"
+    if "!line!"=="%old%" (
+        echo %new%
+    ) else (
+        echo %%a
+    )
+)) > "%file%.tmp"
+
+move /y "%file%.tmp" "%file%" > nul
+
+echo Da sua dong VideoCapture thanh cong!
 
 pause
