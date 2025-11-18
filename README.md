@@ -1,7 +1,4 @@
-# 📘 Dự Án Webcam AI
-
-Một dự án đơn giản sử dụng **OpenCV**, **PyTorch**, và các thư viện hỗ trợ để chạy camera và xử lý hình ảnh. README này được viết đẹp, rõ ràng và dễ làm theo.
-
+# 📘 SETUP MODEL AI
 ---
 
 ## 🚀 Bắt đầu
