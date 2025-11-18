@@ -53,3 +53,8 @@ Use code in ./training folder
   training/Plate_detection.ipynb     #for LP_Detection
   training/Letter_detection.ipynb    #for Letter_detection
 ```
+
+
+<!-- C:\Users\nguye\project\KnowledtreeV1\OCR\License-Plate-Recognition>.\.venv\Scripts\activate.bat
+
+(.venv) C:\Users\nguye\project\KnowledtreeV1\OCR\License-Plate-Recognition>python detect_api.py -->
