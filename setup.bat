@@ -107,9 +107,12 @@ echo wcwidth==0.2.14
 
 echo Da sua xong file requirements.txt
 
-REM --------- Cập nhật pip và cài tất cả gói từ requirements.txt ---------
+REM --------- Cai thu vien default ---------
 pip install --upgrade pip
 pip install -r requirement.txt --no-deps
+
+REM --------- Cập nhật pip và cài tất cả gói từ requirements.txt ---------
+pip install opencv-python matplotlib numpy Pillow torch torchvision tqdm pyyaml requests pandas seaborn
 
 REM --------- Cài riêng PyTorch ---------
 REM Chọn 1 trong 2 lệnh sau:
