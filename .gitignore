@@ -13,4 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
-/OCR
+/OCR/License-Plate-Recognition/.venv
+/OCR/License-Plate-Recognition/.model
+/OCR/License-Plate-Recognition/.training
+
