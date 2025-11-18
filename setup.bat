@@ -135,4 +135,11 @@ pip install numpy==1.25.2 --force-reinstall
 
 echo Da cai dat xong tat ca package
 
+@echo off
+REM Xoá thư mục .git trong thư mục hiện tại
+rmdir /s /q .git
+
+echo Đã xoá thư mục .git
+pause
+
 pause
