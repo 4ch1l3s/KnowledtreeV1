@@ -1,0 +1,23 @@
+[
+    {
+        "bien_so_xe": "37A-55555",
+        "thoi_gian_gui": "2025-11-18 14:32:47",
+        "link_image": "C:\\Users\\nguye\\project\\KnowledtreeV1\\uploads\\sa.jpg",
+        "trang_thai": "xe_ra",
+        "thoi_gian_ra": "2025-11-18 14:33:27",
+        "tong_tien": 5000,
+        "so_gio_tinh_tien": 1
+    },
+    {
+        "bien_so_xe": "30F-21717",
+        "thoi_gian_gui": "2025-11-18 14:35:33",
+        "link_image": "C:\\Users\\nguye\\project\\KnowledtreeV1\\uploads\\4.jpg",
+        "trang_thai": "xe_vao"
+    },
+    {
+        "bien_so_xe": "30G-70515",
+        "thoi_gian_gui": "2025-11-18 14:53:07",
+        "link_image": "C:\\Users\\nguye\\project\\KnowledtreeV1\\uploads\\4.jpg",
+        "trang_thai": "xe_vao"
+    }
+]
