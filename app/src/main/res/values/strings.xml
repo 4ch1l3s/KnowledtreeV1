@@ -7,10 +7,11 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
+    <string name="menu_home">Máy ảnh</string>
+    <string name="menu_history">Lịch sử bãi đỗ xe</string>
     <string name="menu_slideshow">Slideshow</string>
-        <!-- Other strings are here -->
-
         <string name="capture_button_desc">Capture Image</string>
+
+    <!-- Biến toàn cục chứa IP -->
+<!--    <string name="base_url">http://192.168.0.104:8000/</string>-->
 </resources>

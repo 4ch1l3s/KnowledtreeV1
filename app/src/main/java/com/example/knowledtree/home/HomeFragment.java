@@ -160,7 +160,7 @@ public class HomeFragment extends Fragment {
                         try {
                             // 1. THÊM TOAST THÔNG BÁO CHỤP ẢNH THÀNH CÔNG
                             requireActivity().runOnUiThread(() ->
-                                    Toast.makeText(requireContext(), "📸 Đã chụp ảnh, đang xử lý...", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(requireContext(), "Đã chụp ảnh, đang xử lý...", Toast.LENGTH_SHORT).show()
                             );
 
                             Bitmap bitmap = yuvConverter.convert(imageProxy);

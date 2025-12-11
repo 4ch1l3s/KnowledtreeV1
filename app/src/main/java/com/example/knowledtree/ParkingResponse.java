@@ -1,4 +1,4 @@
-package com.example.knowledtree; // Thay đổi theo package của bạn
+package com.example.knowledtree;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -23,9 +23,9 @@ public class ParkingResponse {
     @SerializedName("so_gio_tinh_tien")
     private int calculatedHours;
 
-    // Các trường khác (checkin_image_path, checkout_image_path, id) cũng nên được thêm vào
 
-    // Getters and Setters (Retrofit không cần setters nếu chỉ đọc)
+
+    // Getters and Setters
     public String getPlateNumber() {
         return plateNumber;
     }

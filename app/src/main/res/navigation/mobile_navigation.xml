@@ -8,7 +8,13 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.knowledtree.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="Chụp ảnh"
         tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_history"
+        android:name="com.example.knowledtree.history.HistoryFragment"
+        android:label="Lịch sử đỗ xe"
+        tools:layout="@layout/fragment_history" />
 
 </navigation>

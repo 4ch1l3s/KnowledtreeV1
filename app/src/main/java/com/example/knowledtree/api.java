@@ -1,5 +1,6 @@
 package com.example.knowledtree;
 
+import java.util.List; // Import cho List<ParkingRecord>
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
@@ -7,15 +8,17 @@ import okhttp3.RequestBody;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
+import retrofit2.http.GET; // Import cho phương thức GET
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Query; // Import cho tham số truy vấn Query
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class api {
 
-    private static final String BASE_URL = "http://192.168.0.100:8000/";
+    private static final String BASE_URL = "http://192.168.0.104:8000/"; // Phải thay đổi mỗi lần đổi IP
     private static Retrofit retrofit = null;
     private static ApiInterface apiInterface = null;
 
@@ -41,6 +44,8 @@ public class api {
     // Interface chứa API endpoints (ĐÃ CẬP NHẬT)
     // =======================================
     public interface ApiInterface {
+
+        // ... (Các API cũ giữ nguyên) ...
 
         // 1) API gửi ảnh -> /detect (Gốc)
         @Multipart
@@ -69,6 +74,13 @@ public class api {
         @POST("/xe-ra")
         Call<PlateResponse> checkOutVehicle(
                 @Part MultipartBody.Part image
+        );
+
+        // 🆕 5) API Lịch Sử -> /history (GET)
+        @GET("history")
+        Call<List<ParkingRecord>> getHistory( // SỬ DỤNG MODEL ParkingRecord
+                                              @Query("status") String status,
+                                              @Query("plate") String plate
         );
     }
 
