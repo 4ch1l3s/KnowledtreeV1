@@ -4,7 +4,6 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -12,12 +11,11 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.converter.gson.GsonConverterFactory;
-import com.example.knowledtree.PlateResponse;
 
 
 public class api {
 
-    private static final String BASE_URL = "http://192.168.1.232:8000/";
+    private static final String BASE_URL = "http://192.168.0.100:8000/";
     private static Retrofit retrofit = null;
     private static ApiInterface apiInterface = null;
 
@@ -40,23 +38,37 @@ public class api {
     }
 
     // =======================================
-    // Interface chứa API endpoints
+    // Interface chứa API endpoints (ĐÃ CẬP NHẬT)
     // =======================================
     public interface ApiInterface {
 
-        // 1) API gửi ảnh -> /detect
+        // 1) API gửi ảnh -> /detect (Gốc)
         @Multipart
         @POST("detect")
         Call<PlateResponse> uploadImage(
                 @Part MultipartBody.Part image
         );
 
-        // 2) API cập nhật trạng thái -> /update_status
+        // 2) API cập nhật trạng thái -> /update_status (Gốc)
         @Multipart
         @POST("update_status")
         Call<PlateResponse> updateStatus(
                 @Part("bien_so") RequestBody bienSo,
                 @Part("trang_thai") RequestBody trangThai
+        );
+
+        // 3) API Xe Vào (Check-in) -> /xe-vao (ĐÃ THÊM MỚI)
+        @Multipart
+        @POST("/xe-vao")
+        Call<PlateResponse> checkInVehicle(
+                @Part MultipartBody.Part image
+        );
+
+        // 4) API Xe Ra (Check-out) -> /xe-ra (ĐÃ THÊM MỚI)
+        @Multipart
+        @POST("/xe-ra")
+        Call<PlateResponse> checkOutVehicle(
+                @Part MultipartBody.Part image
         );
     }
 

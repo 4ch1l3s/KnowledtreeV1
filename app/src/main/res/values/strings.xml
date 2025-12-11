@@ -10,4 +10,7 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+        <!-- Other strings are here -->
+
+        <string name="capture_button_desc">Capture Image</string>
 </resources>

@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.knowledtree"
-    compileSdk = 36   // 34 là chuẩn ổn định, 36 hiện chưa stable
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.knowledtree"
@@ -15,6 +15,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -65,20 +66,17 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
-    // CameraX (ổn định nhất)
+    // CameraX (Sử dụng version 1.3.1 duy nhất và ổn định nhất)
+    // Loại bỏ khai báo trùng lặp 'val cameraxVersion'
     implementation("androidx.camera:camera-core:1.3.1")
     implementation("androidx.camera:camera-camera2:1.3.1")
     implementation("androidx.camera:camera-lifecycle:1.3.1")
     implementation("androidx.camera:camera-view:1.3.1")
 
+    // Nếu bạn không dùng video, có thể bỏ dòng này:
+    // implementation("androidx.camera:camera-video:1.3.1")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    val cameraxVersion = "1.3.0"
-    implementation("androidx.camera:camera-core:$cameraxVersion")
-    implementation("androidx.camera:camera-camera2:$cameraxVersion")
-    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
-    implementation("androidx.camera:camera-view:$cameraxVersion")
-    implementation("androidx.camera:camera-video:$cameraxVersion")
 }
